@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kwabena Ampomah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced Button and Link Effects */
+  .link, button {
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+  }
+
+  .link:hover, button:hover {
+    transform: scale(1.05);
+  }
+
+  button {
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+  }
+
+  /* Scroll-Reveal Enhancements */
+  .scroll-reveal h2, .scroll-reveal p {
+    visibility: hidden; /* Initially hide text */
+  }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .page1 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url("baby.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh;
+}
+
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .link {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #FFF;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .title h1 {
+      color: white;
+      font-size: 60px;
+      font-weight: 700;
+      text-align: center;
+      margin: auto;
+    }
+
+    .about {
+      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url("about.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .about img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .about-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #E91E63;
+    }
+
+    .about-text h5 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #bbb;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    .logos h2{
+      text-align: center;
+      color: #333; /* Change to your preferred text color */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Horizontal shadow, Vertical shadow, Blur radius, Color */
+  font-size: 24px; /* Adjust based on your design */
+  font-weight: bold; /* Makes the text bold */
+    }
+
+    button {
+      background: #E91E63;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background: #C2185B;
+    }
+
+    
+
+
+
+
+    @media (max-width: 768px) {
+      .title h1 {
+        font-size: 40px;
+      }
+
+      .about-text h1 {
+        font-size: 36px;
+      }
+
+      .about-text, .link {
+        padding: 0 10px;
+      }
+    }
+    @keyframes slide{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+    .logos{
+      overflow: hidden;
+      padding:60px 0;
+      background: white;
+      white-space: nowrap;
+      position: relative;
+    }
+    .logos::before{
+      position: absolute;
+      top:0;
+      left:0;
+      width:250px;
+      height:100%;
+      background:linear-gradient(to right,rgba(255,255,255,0),white);
+      content:""; 
+      z-index: 2;
+    }
+    .logos::after{
+      position: absolute;
+      top:0;
+      right:0;
+      width:250px;
+      height:100%;
+      background:linear-gradient(to left,rgba(255,255,255,0),white);
+      content:""; 
+      z-index: 2;
+    }
+    .logos:hover .logos-slide{
+      animation-play-state:paused;
+    }
+    .logos-slide{ 
+      display: inline-block;
+      animation: 3s slide infinite linear;
+      
+    
+    }
+    .logos-slide img{
+     
+      height:100px;
+      margin:0 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page1">
+    <div class="header">
+      <a href="#About" class="link">About</a>
+      <a href="#Projects" class="link">Projects</a>
+      <a href="#Skills" class="link">Skills</a>
+
+    </div>
+    <div class="title">
+      <h1>Kwabena Ampomah</h1>
+    </div>
+  </div>
+  <div class="about" id="About">
+    <img src="face.png" alt="About Me">
+    <div class="about-text">
+      <h1>About Me</h1>
+      <h5>Software Developer</h5>
+      <p>I'm an aspiring Software Developer. Proficient in HTML, CSS, Java, Python. I love creating front-end websites that are both visually appealing and user-friendly.</p>
+      <button type="button">Let's Talk</button>
+    </div>
+  </div>
+    <div class="logos">
+      <h2 class="Skills" id="Skills">Skills</h2>
+      <div class="logos-slide">
+        <img src="java.png" />
+        <img src="js.png" />
+        <img src="python.png" />
+        <img src="html.png" />
+        <img src="css.png" />
+      </div>
+  </div>
+  <script>
+    var copy = document.querySelector(".logos-slide").cloneNode(true); 
+document.querySelector(".logos").appendChild(copy);
+
+  </script>
+</body>
+</html>
